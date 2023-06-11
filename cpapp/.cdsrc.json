@@ -1,1 +1,25 @@
-{}
+{
+  "[development]": {
+      "auth": {
+          "passport": {
+              "strategy": "mock",
+              "users": {
+                  "risk.viewer@tester.sap.com": {
+                      "password": "initial",
+                      "ID": "risk.viewer@tester.sap.com",
+                      "roles": [
+                          "RiskViewer"
+                      ]
+                  },
+                  "glauco": {
+                      "password": "12345",
+                      "ID": "glauco",
+                      "roles": [
+                          "RiskManager"
+                      ]
+                  }
+              }
+          }
+      }
+  }
+}
