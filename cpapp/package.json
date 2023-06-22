@@ -16,6 +16,9 @@
     "@sap/ux-specification": "^1.108.7",
     "sqlite3": "^5"
   },
+  "engines": {
+    "node": "^16"
+  },
   "scripts": {
     "start": "cds-serve",
     "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false",
