@@ -1,5 +1,13 @@
 # Getting Started
 
+1.0.1
+  Logging service
+
+1.0.0
+  Roles informations
+  Workzone data
+
+
 Welcome to your new project.
 
 It contains these folders and files, following our recommended project layout:
