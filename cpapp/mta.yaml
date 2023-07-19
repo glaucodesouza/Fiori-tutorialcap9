@@ -1,7 +1,7 @@
 _schema-version: "3.1"
 ID: cpapp
 description: A simple CAP project.
-version: 1.0.1
+version: 1.0.3
 modules:
 - name: cpapp-srv
   type: nodejs
@@ -81,6 +81,10 @@ modules:
       - nsmitigations.zip
       name: nsmitigations
       target-path: resources/
+    - artifacts:
+      - products.zip
+      name: products
+      target-path: resources/
 - name: nsrisks
   type: html5
   path: app/risks
@@ -101,7 +105,16 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-
+- name: products
+  type: html5
+  path: app/products
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
 resources:
 - name: cpapp-db
   type: com.sap.xs.hdi-container

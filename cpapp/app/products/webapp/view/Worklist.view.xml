@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="ns.mitigations.controller.Worklist"
+    controllerName="products.controller.Worklist"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic">
@@ -20,7 +20,7 @@
                 id="table"
                 width="auto"
                 items="{
-                    path: '/Mitigations',
+                    path: '/Products',
                     sorter: {
                         path: 'ID',
                         descending: false
@@ -39,6 +39,7 @@
                             text="{worklistView>/worklistTableTitle}"
                             level="H3"/>
                         <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <Button id="btnCreate"          text="Create"            press="onCreate"         type="Emphasized"/>
                         <SearchField
                             id="searchField"
                             tooltip="{i18n>worklistSearchTooltip}"
@@ -53,34 +54,24 @@
                 </headerToolbar>
 
                 <columns>
-                    <Column id="DescriptionColumn">
-                        <Text text="Description" id="DescriptionColumnTitle"/>
-                    </Column>
-                    <Column id="OwnerColumn">
-                        <Text text="Owner" id="OwnerColumnTitle"/>
-                    </Column>
-                    <Column id="TimelineColumn">
-                        <Text text="Timeline" id="TimelineColumnTitle"/>
-                    </Column>
+                    <Column id="nameColumn">                        <Text text="ID"             id="nameColumnTitle"/>    </Column>
+                    <Column id="descriptionColumn"  hAlign="End">   <Text text="Description"    id="descriptionTitle"/>   </Column>
+                    <Column id="quantityColumn"     hAlign="End">   <Text text="Quantity"       id="quantityTitle"/>      </Column>
+                    <Column id="priceColumn"        hAlign="End">   <Text text="Price"          id="priceTitle"/>         </Column>
                 </columns>
 
                 <items>
-                    <ColumnListItem id="_IDGenColumnListItem1"
-                        type="Navigation"
-                        press=".onPress">
+                    <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press=".onPress">
                         <cells>
-                            <ObjectIdentifier id="_IDGenObjectIdentifier1" text="{description}" />
-                            <Text id="_IDGenText1" text="{owner}" />
-                            <Text id="_IDGenText2" text="{timeline}" />
+                            <ObjectIdentifier   id="_IDGenObjectIdentifier1"    title="{ID}"/>
+                            <Text               id="description"                text="{description}" />
+                            <Text               id="quantity"                   text="{quantity}" />
+                            <Text               id="price"                      text="{price}" />
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
         </semantic:content>
-
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
 
     </semantic:SemanticPage>
 

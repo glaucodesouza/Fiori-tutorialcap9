@@ -2,6 +2,7 @@ using { sap.ui.riskmanagement as my } from '../db/schema';
 
 @path: 'service/risk'
 service RiskService {
+    
   entity Risks @(restrict : [
             {
                 grant : [ 'READ' ],
@@ -25,4 +26,15 @@ service RiskService {
             }
         ]) as projection on my.Mitigations;
     annotate Mitigations with @odata.draft.enabled;
+
+  entity Products @(restrict : [
+            {
+                grant : [ 'READ' ],
+                to : [ 'RiskViewer' ]
+            },
+            { 
+                grant : [ '*' ],
+                to : [ 'RiskManager' ]
+            }
+        ]) as projection on my.Products;
 }

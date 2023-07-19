@@ -16,5 +16,13 @@ module.exports = cds.service.impl(async function() {
             }
         });
     });
+
+    this.after('READ', 'Products', risksData => {
+        debugger;
+    });
+
+    this.after('SAVE', 'Products', risksData => {
+        debugger;
+    });
     
 });

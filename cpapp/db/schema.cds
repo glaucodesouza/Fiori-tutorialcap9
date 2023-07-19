@@ -1,5 +1,5 @@
 namespace sap.ui.riskmanagement;
-using { managed } from '@sap/cds/common';
+using { managed, cuid } from '@sap/cds/common';
 
   entity Risks : managed {
     key ID      : UUID  @(Core.Computed : true);
@@ -17,4 +17,11 @@ using { managed } from '@sap/cds/common';
     owner        : String;
     timeline     : String;
     risks        : Association to many Risks on risks.miti = $self;
+  }
+
+  entity Products : managed, cuid 
+  {
+    description  : String;
+    quantity     : Decimal(11,2); //Decimal(Precision,Scale) = Precision=Total digits including decimal places and integer part.
+    price        : Decimal(11,2)
   }

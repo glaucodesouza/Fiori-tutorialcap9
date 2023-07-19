@@ -1,5 +1,11 @@
 # Getting Started
 
+1.0.3
+  Creation of Products App
+
+1.0.2
+  Creation of Products table
+
 1.0.1
   Logging service
 

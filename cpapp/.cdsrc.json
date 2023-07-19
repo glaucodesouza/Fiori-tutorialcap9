@@ -15,8 +15,8 @@
                       "password": "12345",
                       "ID": "glauco",
                       "roles": [
-                          "RiskManager"
-                      ]
+                          "RiskManager" 
+                      ] 
                   } 
               }
           }
