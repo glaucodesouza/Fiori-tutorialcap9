@@ -31,8 +31,28 @@ sap.ui.define([
       }, 
 
       _onCreateMatched: function (oEvent) {
-        
-        var m = this.getView().getModel();
+        // debugger;
+        // var m = this.getView().getModel();
+        // let oCreateModel2 = this.getOwnerComponent().getModel();
+
+        // try {
+        //   oCreateModel2.metadataLoaded().then(function(){
+        //     var oContext = oCreateModel2.createEntry('/Products',{
+        //             properties: {
+        //               description : '',
+        //               quantity : '0.00',
+        //               price : '0.00'
+        //             }
+        //         });
+        //     this.getView().bindElement({
+        //         path: oContext.getPath()
+        //         //model: "",
+        //     });
+        //     }.bind(this));
+        // } catch (error) {
+        //   console.log('error _onCreateMatched()');
+        // }
+
         try {
           m.metadataLoaded().then(function(){
             var oContext = m.createEntry('/Products',{
@@ -54,7 +74,8 @@ sap.ui.define([
 
       onSave: function () {
         debugger;
-        let oCreateModel = this.getView().getModel();        
+        let oCreateModel = this.getView().getModel();
+        let oCreateModel2 = this.getOwnerComponent().getModel();
 
         var data = {
           description: this.byId("inpDescription").getValue(),
@@ -64,7 +85,7 @@ sap.ui.define([
 
         console.log('Before create method...');
 
-        oCreateModel.create("/Products", data, {
+        oCreateModel2.create("/Products", data, {
           success: function (oData) {
             console.log('create success');
           }.bind(this),
@@ -72,6 +93,15 @@ sap.ui.define([
             console.log('create error');
           }.bind(this),
         });
+
+        // oCreateModel.create("/Products", data, {
+        //   success: function (oData) {
+        //     console.log('create success');
+        //   }.bind(this),
+        //   error: function (oError) {
+        //     console.log('create error');
+        //   }.bind(this),
+        // });
 
         console.log('After create method...');
       },
@@ -109,6 +139,12 @@ sap.ui.define([
       /* =========================================================== */
       /* internal methods                                            */
       /* =========================================================== */
+
+      onAfterRendering: function(){
+        // debugger;
+        // var oComponent = this.getOwnerComponent();
+        // var oModel = oComponent.getModel();
+      },
 
       /**
        * Binds the view to the object path.

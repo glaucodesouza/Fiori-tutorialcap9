@@ -17,12 +17,12 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/service/risk/",
+                "uri": "/v2/service/risk/",
                 "type": "OData",
                 "settings": {
                     "annotations": [],
                     "localUri": "localService/metadata.xml",
-                    "odataVersion": "4.0"
+                    "odataVersion": "2.0"
                 }
             }
         },
