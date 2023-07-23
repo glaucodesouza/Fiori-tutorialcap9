@@ -2,8 +2,9 @@ sap.ui.define([
   "./BaseController",
   "sap/ui/model/json/JSONModel",
   "sap/ui/core/routing/History",
-  "../model/formatter"
-], function (BaseController, JSONModel, History, formatter) {
+  "../model/formatter",
+  "sap/m/MessageToast"
+], function (BaseController, JSONModel, History, formatter, MessageToast) {
   "use strict";
 
   return BaseController.extend("products.controller.Create", {
@@ -88,9 +89,14 @@ sap.ui.define([
         oCreateModel2.create("/Products", data, {
           success: function (oData) {
             console.log('create success');
+            var msg = `Produto ` + data.description + `\r\ncriado com sucesso!`;
+            MessageToast.show(msg);
+            window.history.go(-1);
           }.bind(this),
           error: function (oError) {
             console.log('create error');
+            msg = `Erro ` + `\r\nao criar Produto!`;
+            MessageToast.show(msg);
           }.bind(this),
         });
 

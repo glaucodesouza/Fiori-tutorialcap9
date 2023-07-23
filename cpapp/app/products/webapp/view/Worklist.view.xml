@@ -22,7 +22,7 @@
                 items="{
                     path: '/Products',
                     sorter: {
-                        path: 'ID',
+                        path: 'description',
                         descending: false
                     }
                 }"
@@ -54,7 +54,6 @@
                 </headerToolbar>
 
                 <columns>
-                    <Column id="nameColumn">                        <Text text="ID"             id="nameColumnTitle"/>    </Column>
                     <Column id="descriptionColumn"  hAlign="End">   <Text text="Description"    id="descriptionTitle"/>   </Column>
                     <Column id="quantityColumn"     hAlign="End">   <Text text="Quantity"       id="quantityTitle"/>      </Column>
                     <Column id="priceColumn"        hAlign="End">   <Text text="Price"          id="priceTitle"/>         </Column>
@@ -63,7 +62,6 @@
                 <items>
                     <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press=".onPress">
                         <cells>
-                            <ObjectIdentifier   id="_IDGenObjectIdentifier1"    title="{ID}"/>
                             <Text               id="description"                text="{description}" />
                             <Text               id="quantity"                   text="{quantity}" />
                             <Text               id="price"                      text="{price}" />
