@@ -1,5 +1,8 @@
 # Getting Started
 
+1.0.4
+  Creation of Dashboard (Charts) App
+
 1.0.3
   Creation of Products App
 
