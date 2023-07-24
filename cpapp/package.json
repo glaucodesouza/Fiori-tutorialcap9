@@ -14,7 +14,7 @@
         "passport": "^0"
     },
     "devDependencies": {
-        "@sap/ux-specification": "^1.96.10",
+        "@sap/ux-specification": "^1.108.10",
         "rimraf": "^3.0.2",
         "sqlite3": "^5"
     },
@@ -28,7 +28,8 @@
         "undeploy": "cf undeploy cpapp --delete-services --delete-service-keys --delete-service-brokers",
         "build": "rimraf resources mta_archives && mbt build --mtar archive",
         "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
-        "watch-products": "cds watch --open products/webapp/index.html?sap-ui-xx-viewCache=false"
+        "watch-products": "cds watch --open products/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-dashboard": "cds watch --open dashboard/webapp/index.html?sap-ui-xx-viewCache=false"
     },
     "sapux": [
         "app/risks"

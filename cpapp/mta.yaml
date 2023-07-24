@@ -85,6 +85,10 @@ modules:
       - products.zip
       name: products
       target-path: resources/
+    - artifacts:
+      - dashboard.zip
+      name: dashboard
+      target-path: resources/
 - name: nsrisks
   type: html5
   path: app/risks
@@ -108,6 +112,16 @@ modules:
 - name: products
   type: html5
   path: app/products
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: dashboard
+  type: html5
+  path: app/dashboard
   build-parameters:
     build-result: dist
     builder: custom
