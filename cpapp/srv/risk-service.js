@@ -1,9 +1,6 @@
 
 const cds = require('@sap/cds')
 
-
-
-
 /**
  * Implementation for Risk Management service defined in ./risk-service.cds
  */
